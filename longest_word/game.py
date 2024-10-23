@@ -12,8 +12,33 @@ class Game:
 
 
     def is_valid(self, word: str) -> bool:
+
         """Return True if and only if the word is valid, given the Game's grid"""
-        pass # TODO
+
+        if not word:
+            return False
+
+        # Create a copy of grid
+        letters = self.grid.copy() # create a duplicate of self.grid
+
+
+        letters = list(letters)
+
+
+        for letter in word:
+            if letter in letters:
+                letters.remove(letter)
+            else:
+                return False
+        else:
+            return True
+
+
+
+
+
+
+
 
 
 # Example implementation
